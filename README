@@ -1,0 +1,10 @@
+Even if you setup the mobile viewport meta in your page, once the orientation fo the device changes, the way the website displays change.
+
+If you want to keep the website without any horizontal scroll, simply use:
+$("body").mobileViewport();
+
+
+You can also defines various options:
+scalable: 	0 = not scalable - 1 = scalable
+maxscale:	default 1.0. Define the max zoom.
+initscale:	default 1.0. Define the initial zoom.
