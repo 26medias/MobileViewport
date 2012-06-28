@@ -1,4 +1,4 @@
-Even if you setup the mobile viewport meta in your page, once the orientation fo the device changes, the way the website displays change.
+Even if you setup the mobile viewport meta in your page, once the orientation of the device changes, the way the website displays change.
 
 If you want to keep the website without any horizontal scroll, simply use:
 $("body").mobileViewport();
@@ -8,3 +8,16 @@ You can also defines various options:
 scalable: 	0 = not scalable - 1 = scalable
 maxscale:	default 1.0. Define the max zoom.
 initscale:	default 1.0. Define the initial zoom.
+
+Example:
+$("body").mobileViewport({
+	scalable:	1,
+	maxscale:	3.0,
+	initscale:	1.0
+});
+
+
+Note:
+You need to have the meta tag "viewport" installed on your page:
+The values do not matter, as the plugin will take control of the tag.
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"> 

@@ -1,6 +1,6 @@
 /**
-	photofeed
-	@version:		1.0.0
+	mobileViewport
+	@version:		1.2.0
 	@author:		Julien Loutre <julien.loutre@gmail.com>
 */
 (function($){
@@ -30,10 +30,6 @@
 						scope.resize();
 					});
 					
-					this.itv = window.setInterval(function() {
-						scope.resize();
-					}, 1000); 
-					
 				} catch (err) {
 					this.error(err);
 				}
@@ -42,12 +38,10 @@
 			pluginClass.prototype.resize = function () {
 				try {
 					
-					if (window.orientation == 0) {
+					if (window.orientation == 0 || window.orientation == 180) {
 						$("meta[name=viewport]").attr("content", "width=device-width, initial-scale="+this.options.initscale+", maximum-scale="+this.options.maxscale+", user-scalable="+this.options.scalable+";");
-						$(".debug").html("width=device-width, initial-scale="+this.options.initscale+", maximum-scale="+this.options.maxscale+", user-scalable="+this.options.scalable+";");
 					} else {
 						$("meta[name=viewport]").attr("content", "width=device-height, initial-scale="+this.options.initscale+", maximum-scale="+this.options.maxscale+", user-scalable="+this.options.scalable+";");
-						$(".debug").html("width=device-height, initial-scale="+this.options.initscale+", maximum-scale="+this.options.maxscale+", user-scalable="+this.options.scalable+";");
 					}
 					
 					
